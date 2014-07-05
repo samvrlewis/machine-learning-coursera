@@ -58,12 +58,6 @@ theta_j = theta_j - \alpha* \frac{d}{d theta_j} J(theta_0, theta_1)
 - Batch gradient descent: uses all of the training samples (ie error for all of them)
 - Gradient descent scales better to large problems than the 'normal equation' (direct solution) approach
 
-## Extensions
-
-- Don't need iterative process
-- Have more number of features
-
-
 
 
 
