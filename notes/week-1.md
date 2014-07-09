@@ -36,9 +36,9 @@ x -> h -> y
 
 - Used to minimise cost function J (but is a general algorithm to minimise a function)
 - Algorithm:
-.. - Start with theta_1, theta_2
-.. - Find best direction to move in so that you go down hill
-.. - Keep changing thetas to reduce J(thetas) until we end up at minimum
+  - Start with theta_1, theta_2
+  - Find best direction to move in so that you go down hill
+  - Keep changing thetas to reduce J(thetas) until we end up at minimum
 - Converges to a local optima (not necessarily global)
 
 theta_j = theta_j - \alpha* \frac{d}{d theta_j} J(theta_0, theta_1)
@@ -49,18 +49,14 @@ theta_j = theta_j - \alpha* \frac{d}{d theta_j} J(theta_0, theta_1)
 ## Gradient descent for linear regression
 
 - Learning rules for gradient descent in linear regession: 
-theta_0 = theta_0 - alpha * 1/m * sum(h_theta(x(i)) - y(i))
-theta_1 = theta_1 - alpha * 1/m * sum(h_theta(x(i)) - y(i))*x(i)
+
+   theta_0 = theta_0 - alpha * 1/m * sum(h_theta(x(i)) - y(i))
+
+   theta_1 = theta_1 - alpha * 1/m * sum(h_theta(x(i)) - y(i))*x(i)
 
 - Cost function for linear regression is always a convex function (bow shaped function), only one local optima. So GD always converges to global optima.
 - Batch gradient descent: uses all of the training samples (ie error for all of them)
 - Gradient descent scales better to large problems than the 'normal equation' (direct solution) approach
-
-## Extensions
-
-- Don't need iterative process
-- Have more number of features
-
 
 
 
