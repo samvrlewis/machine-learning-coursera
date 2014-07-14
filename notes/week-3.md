@@ -39,3 +39,20 @@
   - d/dtheta_j J(theta) = (h_theta(x_i) - y_i)*x_j^i
   - Identical to linear regression apart from hypothesis function being different
 - Feature scaling also useful for logistic regression
+
+## Advanced optimisation
+- Other algorithms can be used to optimise J(theta)
+  - Conjugate gradient
+  - BFGS
+  - L-BFGS
+- Don't manually pick alpha
+- Often faster than gradient descent
+- But more complex (but possible to use without understanding it)
+- Can use 'fminunc' in octave
+
+## Multiclass classification
+- One vs all
+  - Consider one class then group all other classes into one class
+  - Will get a hypothesis function for each class
+  - So have h^i_theta(x) = P(y=i|x; theta) for each class i
+  - Then for a new input, run each hypothesis and choose the one with the largest value
