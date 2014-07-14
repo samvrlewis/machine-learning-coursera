@@ -23,3 +23,19 @@
   - h_theta(x) <= 0.5 when theta^T*x <= 0
   - So predict y = 1 for theta^T*x >= 0, ie theta_0 + theta_1*x1 + theta_2*x2 + ... >= 0
 - Decision boundary is theta^T*x = 0
+
+## Cost function
+- Using the square cost function that was used for linear regression in logistic regression does not work well
+  - Because sigmoid non linear J(theta) will be non convex (lots of local optima)
+- Need a cost function that is convex:
+- Cost(h_theta(x), y) = { -log(h_theta(x)) if y=1 or -log(1-h_theta(x)) if y=0)
+- This penalises wrong classifications by very large costs but gives 0 cost for correct classification
+- Can be simpler to write cost(h_theta(x), y) = -ylog(h_theta(x)) - (1-y)log(1-h_theta(x))
+- Then J(theta) = 1/m * sum(cost(h_theta(x_i), y_i))
+
+## Fitting parameters
+- Again, need to find min(theta) J(theta)
+- Use gradient descent: theta_j = theta_j - alpha* d/dtheta_j J(theta)
+  - d/dtheta_j J(theta) = (h_theta(x_i) - y_i)*x_j^i
+  - Identical to linear regression apart from hypothesis function being different
+- Feature scaling also useful for logistic regression
