@@ -23,7 +23,7 @@
 
 - Make features on a similar scale
 - Makes gradient descent converge quicker
-.. - Without feature scaling contours can be very skewed
+  - Without feature scaling contours can be very skewed
 - Want to get -1 <= x_i <= 1 normally (roughly, on same order of magnitude)
 - Mean normalisation: replace x_i with x_i - mu_i to make features have ~0 mean
 
@@ -35,9 +35,9 @@
 ## Features and polynomial regression
 
 - Can create new features based on other features
-.. - For eg: area = frontage x depth
+  - For eg: area = frontage x depth
 - Can fit other polynomials of other orders
-.. - Eg: h_theta(x) = theta_0 + theta_1(size) + theta_2(size)^2
+  - Eg: h_theta(x) = theta_0 + theta_1(size) + theta_2(size)^2
 - There are algorithms to choose features to use
 
 ## Normal equation
