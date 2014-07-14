@@ -26,6 +26,7 @@
   - Without feature scaling contours can be very skewed
 - Want to get -1 <= x_i <= 1 normally (roughly, on same order of magnitude)
 - Mean normalisation: replace x_i with x_i - mu_i to make features have ~0 mean
+- To normalise: x_i = (x_i - mean(x))/(max(x) - min(x))
 
 ## Choosing alpha
 
