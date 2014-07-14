@@ -16,3 +16,10 @@
 - Let our new hypothesis, h_theta(x) = g(h_theta(x)) = 1/(1 + exp(-theta^T*x))
 - Then h_theta(x) = estimated probability that y=1 on input x, ie P(y=1|x;theta)
 
+## Decision boundary
+- If h_theta(x) > 0.5 predict y = 1, otherwise predict y=0
+- For the sigmoid function, g(z) >= 0.5 for z >= 0
+  - So h_theta(x) >= 0.5 when theta^T*x >= 0
+  - h_theta(x) <= 0.5 when theta^T*x <= 0
+  - So predict y = 1 for theta^T*x >= 0, ie theta_0 + theta_1*x1 + theta_2*x2 + ... >= 0
+- Decision boundary is theta^T*x = 0
