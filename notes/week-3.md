@@ -56,3 +56,18 @@
   - Will get a hypothesis function for each class
   - So have h^i_theta(x) = P(y=i|x; theta) for each class i
   - Then for a new input, run each hypothesis and choose the one with the largest value
+
+# Regularisation
+- Overfitting and underfitting are problems with linear/logistic regression
+- Underfitting (high bias) is when for eg a linear line fit to data when it doesn't fit it
+- Overfitting (high variance) is when the learned hypothesis fits training set really well but fails to generalise for new examples
+
+## Adressing overfitting
+- Plotting hypothesis can work but not for large amount of features (hard to visualise)
+- Lots of features but small amount examples can lead to overfitting
+- Reducing number of features can address overfitting
+  - Manually select features to keep
+  - Model selection algorithm 
+  - Regularisation
+    - Keep all features but reduce magnitude/values of parameters theta_j
+    - Works well for lots of features that contribute to preidcting output
