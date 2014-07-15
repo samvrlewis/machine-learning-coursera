@@ -39,3 +39,59 @@
   - d/dtheta_j J(theta) = (h_theta(x_i) - y_i)*x_j^i
   - Identical to linear regression apart from hypothesis function being different
 - Feature scaling also useful for logistic regression
+
+## Advanced optimisation
+- Other algorithms can be used to optimise J(theta)
+  - Conjugate gradient
+  - BFGS
+  - L-BFGS
+- Don't manually pick alpha
+- Often faster than gradient descent
+- But more complex (but possible to use without understanding it)
+- Can use 'fminunc' in octave
+
+## Multiclass classification
+- One vs all
+  - Consider one class then group all other classes into one class
+  - Will get a hypothesis function for each class
+  - So have h^i_theta(x) = P(y=i|x; theta) for each class i
+  - Then for a new input, run each hypothesis and choose the one with the largest value
+
+# Regularisation
+- Overfitting and underfitting are problems with linear/logistic regression
+- Underfitting (high bias) is when for eg a linear line fit to data when it doesn't fit it
+- Overfitting (high variance) is when the learned hypothesis fits training set really well but fails to generalise for new examples
+
+## Adressing overfitting
+- Plotting hypothesis can work but not for large amount of features (hard to visualise)
+- Lots of features but small amount examples can lead to overfitting
+- Reducing number of features can address overfitting
+  - Manually select features to keep
+  - Model selection algorithm 
+  - Regularisation
+    - Keep all features but reduce magnitude/values of parameters theta_j
+    - Works well for lots of features that contribute to preidcting output
+
+## Specifics of regularisation
+- Works by penalising large parameters in cost function
+- Smaller values for parameters leads to a simpler hypothesis that's less prone to overfitting
+- Regularisation term = lambda * sum(theta_j^2)
+- If regularisation parameter (lambda) too large, all parameters go to 0 which results in underfitting
+
+## Regularised linear regression
+- J(theta) = 1/2m * [sum((h_theta(x_i) - y_i)^2) + lamda*sum(theta_j^2)]
+- Gradient descent:
+  - theta_0 = theta_0 - alpha * 1/m * sum((h_theta(x(i)) - y(i)*x(i)_0)
+  - theta_j = theta_j - alpha * [1/m * sum((h_theta(x(i)) - y(i))x^(i)_j + lambda/m theta_j]
+  - theta_j = theta_j(1 - alpha*lambda/m) - alpha*1/m sum(h_theta(x(i)) - y(i))x(i)_j
+  - 1 - alpha*lambda/m < 1
+  - So on every iteration, theta_j is shrunk a bit and then some cost is subtracted off like before
+
+## Regularised logistic regression
+- Add to cost function : lambda/(2m) * sum(theta_j^2)
+- Gradient descent:
+  - theta_0 = theta_0 - alpha * 1/m * sum((h_theta(x(i)) - y(i)*x(i)_0)
+  - theta_j = theta_j - alpha * [1/m * sum((h_theta(x(i)) - y(i))x^(i)_j + lambda/m theta_j]
+  - theta_j = theta_j(1 - alpha*lambda/m) - alpha*1/m sum(h_theta(x(i)) - y(i))x(i)_j
+  - but h_theta(x) = 1/(1 + exp(-theta^Tx)
+  
