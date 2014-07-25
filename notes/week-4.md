@@ -15,3 +15,4 @@
 - theta^j = matrix of weights controlling mapping from layer j to layer j+1
 
 
+
