@@ -14,4 +14,11 @@
 - a_i^j = activation of unit i in layer j
 - theta^j = matrix of weights controlling mapping from layer j to layer j+1
 
+- vectorised aproach: x = [x0 ; x1 ; x2 ; x3], z^2 = [z_1^2 ; z_2^2]
+
+- Add a_0^2 = 1
+- Then z^(3) = theta^2 a(2) 
+
+
+
 
